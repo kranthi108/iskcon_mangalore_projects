@@ -1,0 +1,230 @@
+.seva-grid-section {
+  width: 100%;
+  padding: 60px;
+  box-sizing: border-box;
+  background: #f6f6f6;
+}
+
+.seva-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.seva-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: white;
+}
+
+.seva-banner {
+  position: relative;
+  padding: 15px 20px;
+  z-index: 3;
+}
+
+.seva-banner h3 {
+  margin: 0;
+  color: white;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.seva-banner-purple {
+  background: #6a1b9a;
+}
+
+.seva-banner-green {
+  background: #2e7d32;
+}
+
+.seva-banner-blue {
+  background: #1565c0;
+}
+
+.seva-banner-orange {
+  background: linear-gradient(to right, #ff6b35, #ffd700);
+}
+
+.seva-background {
+  position: relative;
+  min-height: 500px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.seva-background-image {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px);
+  z-index: 1;
+}
+
+.seva-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.seva-sanskrit {
+  margin-bottom: 15px;
+}
+
+.seva-sanskrit p {
+  color: white;
+  font-size: 0.9em;
+  line-height: 1.6;
+  margin: 0;
+  font-style: italic;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.seva-translation {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.seva-translation p {
+  color: white;
+  font-size: 1em;
+  line-height: 1.8;
+  margin: 0 0 10px 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.seva-source {
+  font-size: 0.9em;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 10px !important;
+}
+
+.seva-info-box {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50px;
+  padding: 15px 25px;
+  margin-bottom: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.seva-info-box p {
+  margin: 5px 0;
+  color: #333;
+  font-weight: 600;
+}
+
+.seva-info-name {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #333 !important;
+}
+
+.seva-info-amount {
+  font-size: 1em;
+  color: #555 !important;
+}
+
+.seva-info-slots {
+  font-size: 0.9em;
+  color: #666 !important;
+}
+
+.seva-info-purple {
+  border: 2px solid #6a1b9a;
+}
+
+.seva-info-green {
+  border: 2px solid #2e7d32;
+}
+
+.seva-info-blue {
+  border: 2px solid #1565c0;
+}
+
+.seva-info-orange {
+  border: 2px solid #ff6b35;
+}
+
+.seva-donate-btn {
+  width: 100%;
+  padding: 14px 20px;
+  background: #ff6b35;
+  color: white;
+  border: 3px solid #ffd700;
+  border-radius: 6px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.seva-donate-btn:hover {
+  background: #ff5722;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .seva-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .seva-grid-section {
+    padding: 40px 20px;
+  }
+
+  .seva-background {
+    min-height: 400px;
+  }
+
+  .seva-banner h3 {
+    font-size: 1.1em;
+  }
+
+  .seva-sanskrit p {
+    font-size: 0.85em;
+  }
+
+  .seva-translation p {
+    font-size: 0.95em;
+  }
+
+  .seva-info-box {
+    padding: 12px 20px;
+  }
+
+  .seva-donate-btn {
+    padding: 12px 16px;
+    font-size: 1em;
+  }
+}

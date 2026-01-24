@@ -1,0 +1,264 @@
+.sponsorship-section {
+  width: 100%;
+}
+
+/* Top Section - Sponsorship Promotion */
+.sponsorship-top {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.sponsorship-top-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.sponsorship-top-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  padding: 40px 60px;
+  box-sizing: border-box;
+}
+
+.sponsorship-text-overlay {
+  position: absolute;
+  top: 40px;
+  left: 60px;
+  color: white;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.sponsorship-line1 {
+  font-size: 1.8em;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sponsorship-line2 {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sponsor-btn-top {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  padding: 14px 32px;
+  background: #ff6b35;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sponsor-btn-top:hover {
+  background: #ff5722;
+}
+
+/* Bottom Section - Phase-I Construction Updates */
+.construction-updates {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.construction-background-carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.construction-background-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.construction-background-slide.active {
+  opacity: 1;
+}
+
+.construction-title {
+  position: relative;
+  text-align: center;
+  font-size: 2.2em;
+  font-weight: bold;
+  color: #8b4513;
+  margin: 40px 0;
+  z-index: 2;
+  padding: 0 60px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.construction-content {
+  position: relative;
+  width: 100%;
+  padding: 40px 60px;
+  box-sizing: border-box;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-height: 400px;
+}
+
+.construction-text-overlay {
+  text-align: right;
+  color: white;
+  margin-bottom: 30px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.construction-line1 {
+  font-size: 1.8em;
+  font-weight: 600;
+  margin: 0 0 5px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.construction-line2 {
+  font-size: 1.8em;
+  font-weight: 600;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.construction-buttons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.donate-btn-construction {
+  padding: 14px 32px;
+  background: #ff6b35;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.donate-btn-construction:hover {
+  background: #ff5722;
+}
+
+.learn-more-btn {
+  padding: 14px 32px;
+  background: #808080;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.learn-more-btn:hover {
+  background: #696969;
+}
+
+.arrow-icon {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sponsorship-top {
+    height: 400px;
+  }
+
+  .sponsorship-top-content {
+    padding: 20px;
+  }
+
+  .sponsorship-text-overlay {
+    top: 20px;
+    left: 20px;
+  }
+
+  .sponsorship-line1 {
+    font-size: 1.3em;
+  }
+
+  .sponsorship-line2 {
+    font-size: 1.1em;
+  }
+
+  .sponsor-btn-top {
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+
+  .construction-title {
+    font-size: 1.5em;
+    margin: 30px 0;
+    padding: 0 20px;
+  }
+
+  .construction-content {
+    padding: 30px 20px;
+    align-items: center;
+  }
+
+  .construction-text-overlay {
+    text-align: center;
+  }
+
+  .construction-line1,
+  .construction-line2 {
+    font-size: 1.3em;
+  }
+
+  .construction-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .donate-btn-construction,
+  .learn-more-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

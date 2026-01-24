@@ -1,0 +1,30 @@
+.sponsors-section {
+  width: 100%;
+  padding: 60px;
+  box-sizing: border-box;
+  background: #f6f6f6;
+}
+
+.sponsors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sponsor-item {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+}
+
+.sponsor-logo-placeholder {
+  color: #999;
+  font-size: 0.9em;
+}

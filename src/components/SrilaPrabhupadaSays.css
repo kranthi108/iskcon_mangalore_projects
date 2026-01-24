@@ -1,0 +1,161 @@
+.srila-prabhupada-section {
+  width: 100%;
+  padding: 60px 0;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.section-heading {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  color: #7b1f1f;
+  padding: 0 60px;
+}
+
+.quotes-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.quotes-carousel-content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.quote-item {
+  min-width: 100%;
+  width: 100%;
+  padding: 60px 60px;
+  background: #f9f9f9;
+  border-left: 6px solid #7b1f1f;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quote-text {
+  font-size: 1.5em;
+  line-height: 2;
+  color: #333;
+  font-style: italic;
+  margin-bottom: 30px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quote-source {
+  color: #7b1f1f;
+  font-weight: bold;
+  text-align: right;
+  font-size: 1.1em;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.carousel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(123, 31, 31, 0.9);
+  color: white;
+  border: none;
+  width: 60px;
+  height: 60px;
+  font-size: 32px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.carousel-nav-btn:hover {
+  background: rgba(123, 31, 31, 1);
+}
+
+.prev-btn {
+  left: 30px;
+}
+
+.next-btn {
+  right: 30px;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+  padding: 0 60px;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #7b1f1f;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  padding: 0;
+}
+
+.dot.active {
+  background: #7b1f1f;
+}
+
+.dot:hover {
+  background: rgba(123, 31, 31, 0.5);
+}
+
+@media (max-width: 768px) {
+  .srila-prabhupada-section {
+    padding: 40px 0;
+  }
+
+  .section-heading {
+    padding: 0 20px;
+    font-size: 1.5em;
+    margin-bottom: 30px;
+  }
+
+  .quote-item {
+    padding: 40px 20px;
+  }
+
+  .quote-text {
+    font-size: 1.2em;
+    line-height: 1.8;
+  }
+
+  .carousel-nav-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 24px;
+  }
+
+  .prev-btn {
+    left: 15px;
+  }
+
+  .next-btn {
+    right: 15px;
+  }
+
+  .carousel-dots {
+    padding: 0 20px;
+    margin-top: 20px;
+  }
+}

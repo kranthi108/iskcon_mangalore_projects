@@ -1,16 +1,22 @@
 import { useState, useEffect } from 'react';
 import './SponsorshipSection.css';
-import templeImage from '../assets/001_temple_front_view.jpeg';
-import constructionImage1 from '../assets/nityaannadana.jpg';
-import constructionImage2 from '../assets/pravachan.jpg';
-import constructionImage3 from '../assets/garbhagriha.jpg';
-import constructionImage4 from '../assets/dwajastambha.jpg';
+import templeImage from '../assets/front_view.png';
+import constructionImage1 from '../assets/1.jpeg';
+import constructionImage2 from '../assets/2.jpeg';
+import constructionImage3 from '../assets/3.jpeg';
+import constructionImage4 from '../assets/4.jpeg';
+import constructionImage5 from '../assets/5.jpeg';
+import constructionImage6 from '../assets/6.jpeg';
+import constructionImage7 from '../assets/7.jpeg'
 
 const constructionImages = [
   constructionImage1,
   constructionImage2,
   constructionImage3,
-  constructionImage4
+  constructionImage4,
+  constructionImage5,
+  constructionImage6,
+  constructionImage7
 ];
 
 export default function SponsorshipSection() {
@@ -43,7 +49,7 @@ export default function SponsorshipSection() {
           <button className="sponsor-btn-top">SPONSOR</button>
         </div>
       </div>
-
+      <br></br>
       {/* Bottom Section - Phase-I Construction Updates */}
       <div className="construction-updates">
         <div className="construction-background-carousel">
@@ -57,7 +63,7 @@ export default function SponsorshipSection() {
             ></div>
           ))}
         </div>
-        <h2 className="construction-title">PHASE-I CONSTRUCTION UPDATES</h2>
+        <h2 className="construction-title">PHASE-1 CONSTRUCTION UPDATES</h2>
         <div className="construction-content">
           <div className="construction-text-overlay">
             <p className="construction-line1">Building today what generations will treasure</p>

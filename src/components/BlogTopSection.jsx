@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import './BlogTopSection.css';
 
 // Import images - you can replace these with actual blog images
-import img1 from '../assets/001_temple_front_view.jpeg';
-import img2 from '../assets/nityaannadana.jpg';
+import img1 from '../assets/front_view.png';
+import img2 from '../assets/right_side_view.png';
 import img3 from '../assets/pravachan.jpg';
 import img4 from '../assets/garbhagriha.jpg';
 import img5 from '../assets/dwajastambha.jpg';
 
-const carouselImages = [img1, img2, img3, img4, img5];
+const carouselImages = [img1, img2];
 
 export default function BlogTopSection() {
   const [currentIndex, setCurrentIndex] = useState(0);

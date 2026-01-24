@@ -67,7 +67,7 @@
   height: calc(100% + 20px);
   background-size: cover;
   background-position: center;
-  filter: blur(4px);
+  filter: blur(1px);
   z-index: 1;
 }
 

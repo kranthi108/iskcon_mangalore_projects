@@ -1,8 +1,8 @@
 import './SevaGrid.css';
-import goshalaImage from '../assets/nityaannadana.jpg';
-import annadanaImage from '../assets/nityaannadana.jpg';
-import dwajastambhaImage from '../assets/dwajastambha.jpg';
-import dwaraImage from '../assets/garbhagriha.jpg';
+import goshalaImage from '../assets/goseva.jpg';
+import annadanaImage from '../assets/annadana.avif';
+import dwajastambhaImage from '../assets/dwajastamba.webp';
+import dwaraImage from '../assets/templedwara.webp';
 
 const sevaData = [
   {

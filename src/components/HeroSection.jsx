@@ -7,13 +7,11 @@ import logoImg from '../assets/logo.png';
 
 export default function HeroSection() {
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
-  const [donationType, setDonationType] = useState('onetime'); // 'onetime' or 'monthly'
   const backgroundImages = [templeView1, templeView2, templeView3];
   
   const constructionProgress = 45; // 45% complete
   const fundsRaised = 2.5; // In crores
   const targetFunds = 8; // In crores
-  const percentage = Math.round((fundsRaised / targetFunds) * 100);
 
   // Rotate background images
   useEffect(() => {
@@ -64,140 +62,66 @@ export default function HeroSection() {
       {/* Hero Content */}
       <div className="hero-content">
         <div className="container">
-          <div className="hero-grid">
-            {/* Left: Message */}
-            <div className="hero-message">
-              <div className="hero-badge">
-                🏛️ Building the Tallest Temple of Coastal Karnataka
-              </div>
-              <h1 className="hero-title">
-                Be Part of
-                <span className="hero-title-highlight"> Divine History </span>
-                Support Our
-                <span className="hero-title-highlight"> Sacred Mission</span>
-              </h1>
-              <p className="hero-description">
-                Join us in constructing a magnificent Centre for Culture & Education at Govardhan Hills, Mangalore. 
-                Your contribution will create a <strong>spiritual beacon</strong> for generations to come — a place of worship, 
-                learning, and community service.
-              </p>
+          {/* Hero Message - Centered */}
+          <div className="hero-message-centered">
+            <div className="hero-badge">
+              🏛️ Building the Tallest Temple of Coastal Karnataka
+            </div>
+            <h1 className="hero-title">
+              Be Part of 
+              <span className="hero-title-highlight"> Divine History </span>
+               Support Our
+              <span className="hero-title-highlight"> Sacred Mission</span>
+            </h1>
+            <p className="hero-description">
+              Join us in constructing a magnificent Centre for Culture & Education at Govardhan Hills, Mangalore. 
+              Your contribution will create a <strong>spiritual beacon</strong> for generations to come — a place of worship, 
+              learning, and community service.
+            </p>
 
-              <div className="hero-stats-inline">
-                <div className="stat-item">
-                  <div className="stat-icon">🏗️</div>
-                  <div className="stat-text">
-                    <strong>{constructionProgress}% Complete</strong>
-                  </div>
-                </div>
-                <div className="stat-item">
-                  <div className="stat-icon">🙏</div>
-                  <div className="stat-text">
-                    <strong>₹{fundsRaised} Cr</strong> raised of ₹{targetFunds} Cr
-                  </div>
+            <div className="hero-stats-inline">
+              <div className="stat-item">
+                <div className="stat-icon">🏗️</div>
+                <div className="stat-text">
+                  <strong>{constructionProgress}% Complete</strong>
                 </div>
               </div>
-
-              <div className="hero-actions">
-                <button className="btn btn-primary btn-large">
-                  Contribute to Temple
-                </button>
-                <button className="btn btn-secondary btn-large">
-                  View Progress
-                </button>
-              </div>
-
-              {/* Trust Badges */}
-              <div className="trust-badges">
-                <div className="trust-badge">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
-                  </svg>
-                  <span>80G Tax Exempt</span>
-                </div>
-                <div className="trust-badge">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
-                  </svg>
-                  <span>100% Transparent</span>
-                </div>
-                <div className="trust-badge">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/>
-                  </svg>
-                  <span>Trusted by devotees worldwide</span>
+              <div className="stat-item">
+                <div className="stat-icon">🙏</div>
+                <div className="stat-text">
+                  <strong>₹{fundsRaised} Cr</strong> raised of ₹{targetFunds} Cr
                 </div>
               </div>
             </div>
 
-            {/* Right: Donation Card */}
-            <div className="hero-donation-card">
-              <div className="donation-card">
-                <div className="card-header">
-                  <h3>Support Our Mission</h3>
-                  <p>Every meal brings comfort to someone in their darkest hour</p>
-                </div>
+            <div className="hero-actions">
+              <button className="btn btn-primary btn-large">
+                Contribute to Temple
+              </button>
+              <button className="btn btn-secondary btn-large">
+                View Progress
+              </button>
+            </div>
 
-                <div className="donation-tabs">
-                  <button 
-                    className={`tab ${donationType === 'onetime' ? 'active' : ''}`}
-                    onClick={() => setDonationType('onetime')}
-                  >
-                    One-time
-                  </button>
-                  <button 
-                    className={`tab ${donationType === 'monthly' ? 'active' : ''}`}
-                    onClick={() => setDonationType('monthly')}
-                  >
-                    Monthly
-                  </button>
-                </div>
-
-                <div className="donation-amounts">
-                  <button className="amount-btn">
-                    <div className="amount">₹2,000</div>
-                    <div className="amount-desc">Brick Seva</div>
-                  </button>
-                  <button className="amount-btn active">
-                    <div className="amount">₹5,000</div>
-                    <div className="amount-desc">Sq. Feet Seva</div>
-                    <div className="badge-most">Most Popular</div>
-                  </button>
-                  <button className="amount-btn">
-                    <div className="amount">₹10,000</div>
-                    <div className="amount-desc">Patron Seva</div>
-                  </button>
-                  <button className="amount-btn">
-                    <div className="amount">₹75,000</div>
-                    <div className="amount-desc">Membership Seva</div>
-                  </button>
-                </div>
-
-                <div className="custom-amount">
-                  <input 
-                    type="number" 
-                    placeholder="Enter custom amount (₹)"
-                    className="amount-input"
-                  />
-                </div>
-
-                <button className="btn btn-primary btn-large donate-submit">
-                  Donate Now
-                </button>
-
-                <div className="recent-donation">
-                  🔥 <strong>125+ devotees</strong> contributed this month
-                </div>
-
-                <div className="goal-progress">
-                  <div className="goal-header">
-                    <span>Construction Progress</span>
-                    <span><strong>₹{fundsRaised} Cr</strong> / ₹{targetFunds} Cr</span>
-                  </div>
-                  <div className="progress-bar">
-                    <div className="progress-fill" style={{ width: `${percentage}%` }}></div>
-                  </div>
-                  <p className="goal-text">₹{(targetFunds - fundsRaised).toFixed(1)} Cr needed to complete the project</p>
-                </div>
+            {/* Trust Badges */}
+            <div className="trust-badges">
+              <div className="trust-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                </svg>
+                <span>80G Tax Exempt</span>
+              </div>
+              <div className="trust-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                </svg>
+                <span>100% Transparent</span>
+              </div>
+              <div className="trust-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/>
+                </svg>
+                <span>Trusted by devotees worldwide</span>
               </div>
             </div>
           </div>

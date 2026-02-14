@@ -44,7 +44,7 @@ export default function TransparencySection() {
     { name: 'Mukhya Mandira (Main Temple)', icon: '🏛️' },
     { name: 'Annadana Hall', icon: '🍽️' },
     { name: 'Goshala (Cow Shelter)', icon: '🐄' },
-    { name: 'Cultural Center', icon: '🎭' },
+    { name: 'Yoga Center', icon: '🧘' },
     { name: 'Guest House', icon: '🏨' },
     { name: 'Vedic School', icon: '📚' }
   ];

@@ -33,7 +33,7 @@ export default function HeroSection() {
                   <img src={logoImg} alt="ISKCON Logo" className="logo-image" />
                 </div>
                 <div className="brand-text">
-                  <h1 className="brand-name">ISKCON Mangalore</h1>
+                  <h1 className="brand-name">ISKCON Mangalore Govardhan Hills</h1>
                   <p className="brand-tagline">Centre for Culture & Education</p>
                 </div>
               </div>

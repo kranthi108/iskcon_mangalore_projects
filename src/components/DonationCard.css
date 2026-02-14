@@ -187,10 +187,33 @@
 /* Responsive */
 @media (max-width: 768px) {
   .donation-card-section {
-    padding: 2rem 0;
+    padding: 2rem 1rem;
   }
 
   .donation-card {
-    padding: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .donation-amounts {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .amount-btn {
+    padding: 0.75rem;
+  }
+
+  .amount {
+    font-size: 1.1rem;
+  }
+
+  .badge-most {
+    font-size: 0.6rem;
+    top: -6px;
+    right: -4px;
+  }
+
+  .card-header h3 {
+    font-size: 1.25rem;
   }
 }

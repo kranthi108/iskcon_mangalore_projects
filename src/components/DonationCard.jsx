@@ -1,12 +1,31 @@
 import { useState } from 'react';
 import './DonationCard.css';
 
+const DONATION_OPTIONS = [
+  { id: 'brick', amount: 2000, label: 'Brick Seva' },
+  { id: 'sqfeet', amount: 5000, label: 'Sq. Feet Seva', popular: true },
+  { id: 'patron', amount: 10000, label: 'Patron Seva' },
+  { id: 'membership', amount: 75000, label: 'Membership Seva' },
+];
+
 export default function DonationCard() {
   const [donationType, setDonationType] = useState('onetime');
+  const [selectedAmount, setSelectedAmount] = useState(5000);
+  const [customAmount, setCustomAmount] = useState('');
   
-  const fundsRaised = 2.5; // In crores
-  const targetFunds = 8; // In crores
+  const fundsRaised = 2.5;
+  const targetFunds = 8;
   const percentage = Math.round((fundsRaised / targetFunds) * 100);
+
+  const handleAmountClick = (amount) => {
+    setSelectedAmount(amount);
+    setCustomAmount(amount.toLocaleString('en-IN'));
+  };
+
+  const handleCustomChange = (e) => {
+    setCustomAmount(e.target.value);
+    setSelectedAmount(null);
+  };
 
   return (
     <section className="donation-card-section">
@@ -34,30 +53,26 @@ export default function DonationCard() {
             </div>
 
             <div className="donation-amounts">
-              <button className="amount-btn">
-                <div className="amount">₹2,000</div>
-                <div className="amount-desc">Brick Seva</div>
-              </button>
-              <button className="amount-btn active">
-                <div className="amount">₹5,000</div>
-                <div className="amount-desc">Sq. Feet Seva</div>
-                <div className="badge-most">Most Popular</div>
-              </button>
-              <button className="amount-btn">
-                <div className="amount">₹10,000</div>
-                <div className="amount-desc">Patron Seva</div>
-              </button>
-              <button className="amount-btn">
-                <div className="amount">₹75,000</div>
-                <div className="amount-desc">Membership Seva</div>
-              </button>
+              {DONATION_OPTIONS.map((option) => (
+                <button
+                  key={option.id}
+                  className={`amount-btn ${selectedAmount === option.amount ? 'active' : ''}`}
+                  onClick={() => handleAmountClick(option.amount)}
+                >
+                  <div className="amount">₹{option.amount.toLocaleString('en-IN')}</div>
+                  <div className="amount-desc">{option.label}</div>
+                  {option.popular && <div className="badge-most">Most Popular</div>}
+                </button>
+              ))}
             </div>
 
             <div className="custom-amount">
               <input 
-                type="number" 
+                type="text" 
                 placeholder="Enter custom amount (₹)"
                 className="amount-input"
+                value={customAmount}
+                onChange={handleCustomChange}
               />
             </div>
 

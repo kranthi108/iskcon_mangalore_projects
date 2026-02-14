@@ -115,7 +115,7 @@ export default function ModernFooter() {
         <div className="container">
           <div className="footer-bottom-content">
             <div className="footer-copyright">
-              © 2026 ISKCON Mangalore — Temple Construction Project | All rights reserved
+              © 2026 ISKCON Mangalore Govardhan Hills— Temple Construction Project | All rights reserved
             </div>
             <div className="footer-legal">
               <a href="#privacy">Privacy Policy</a>

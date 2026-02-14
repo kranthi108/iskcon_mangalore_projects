@@ -7,9 +7,10 @@ import logoImg from '../assets/logo.png';
 
 export default function HeroSection() {
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
+  const [donationType, setDonationType] = useState('onetime'); // 'onetime' or 'monthly'
   const backgroundImages = [templeView1, templeView2, templeView3];
   
-  const constructionProgress = 4; // 45% complete
+  const constructionProgress = 45; // 45% complete
   const fundsRaised = 2.5; // In crores
   const targetFunds = 8; // In crores
   const percentage = Math.round((fundsRaised / targetFunds) * 100);
@@ -137,8 +138,18 @@ export default function HeroSection() {
                 </div>
 
                 <div className="donation-tabs">
-                  <button className="tab active">One-time</button>
-                  <button className="tab">Monthly</button>
+                  <button 
+                    className={`tab ${donationType === 'onetime' ? 'active' : ''}`}
+                    onClick={() => setDonationType('onetime')}
+                  >
+                    One-time
+                  </button>
+                  <button 
+                    className={`tab ${donationType === 'monthly' ? 'active' : ''}`}
+                    onClick={() => setDonationType('monthly')}
+                  >
+                    Monthly
+                  </button>
                 </div>
 
                 <div className="donation-amounts">

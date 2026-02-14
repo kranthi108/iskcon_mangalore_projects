@@ -1,0 +1,250 @@
+.construction-updates {
+  background: white;
+}
+
+.updates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: var(--space-3xl);
+}
+
+.update-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.update-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.update-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.update-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.update-card:hover .update-image {
+  transform: scale(1.1);
+}
+
+.update-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.update-card:hover .update-overlay {
+  opacity: 1;
+}
+
+.view-icon {
+  font-size: 2rem;
+  color: white;
+}
+
+.update-info {
+  padding: 1.5rem;
+}
+
+.update-date {
+  font-size: 0.875rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.update-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.update-description {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Image Modal */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  max-width: 900px;
+  max-height: 90vh;
+  background: white;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-base);
+}
+
+.modal-close:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: rotate(90deg);
+}
+
+.modal-content img {
+  width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  background: #f5f5f5;
+}
+
+.modal-info {
+  padding: 2rem;
+}
+
+.modal-info h3 {
+  font-size: 1.5rem;
+  color: var(--color-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.modal-date {
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.modal-info p {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* CTA Section */
+.updates-cta {
+  text-align: center;
+  padding: 3rem;
+  background: linear-gradient(135deg, rgba(217, 121, 23, 0.05), rgba(217, 121, 23, 0.1));
+  border-radius: var(--radius-2xl);
+  border: 2px dashed var(--color-primary);
+}
+
+.updates-cta h3 {
+  font-size: 2rem;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+.updates-cta p {
+  font-size: 1.125rem;
+  color: var(--color-text-light);
+  margin-bottom: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .updates-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .update-image-wrapper {
+    height: 200px;
+  }
+
+  .modal-content {
+    max-width: 100%;
+    margin: 1rem;
+  }
+
+  .modal-content img {
+    max-height: 50vh;
+  }
+
+  .modal-info {
+    padding: 1.5rem;
+  }
+
+  .updates-cta {
+    padding: 2rem 1.5rem;
+  }
+
+  .updates-cta h3 {
+    font-size: 1.5rem;
+  }
+
+  .updates-cta p {
+    font-size: 1rem;
+  }
+}

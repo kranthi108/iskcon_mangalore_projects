@@ -1,22 +1,22 @@
-import BlogTopSection from '../components/BlogTopSection';
-import SevaGrid from '../components/SevaGrid';
-import SponsorshipSection from '../components/SponsorshipSection';
-import LatestNews from '../components/LatestNews';
-import SrilaPrabhupadaSays from '../components/SrilaPrabhupadaSays';
-import Sponsors from '../components/Sponsors';
-import BlogFooter from '../components/BlogFooter';
+import HeroSection from '../components/HeroSection';
+import ImpactSection from '../components/ImpactSection';
+import ConstructionUpdates from '../components/ConstructionUpdates';
+import TestimonialsSection from '../components/TestimonialsSection';
+import SevaOpportunitiesSection from '../components/SevaOpportunitiesSection';
+import TransparencySection from '../components/TransparencySection';
+import ModernFooter from '../components/ModernFooter';
 import '../App.css';
 
 export default function Blog() {
   return (
     <div className="app">
-      <BlogTopSection />
-      <SevaGrid />
-      <SponsorshipSection />
-      <LatestNews />
-      <SrilaPrabhupadaSays />
-      <Sponsors />
-      <BlogFooter />
+      <HeroSection />
+      <ImpactSection />
+      <ConstructionUpdates />
+      <SevaOpportunitiesSection />
+      <TestimonialsSection />
+      <TransparencySection />
+      <ModernFooter />
     </div>
   );
 }

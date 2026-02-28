@@ -42,7 +42,7 @@ export default function HeroSection() {
               <a href="#seva" className="nav-link">Seva Opportunities</a>
               <a href="#impact" className="nav-link">Our Impact</a>
               <a href="#about" className="nav-link">About Us</a>
-              <button className="btn btn-primary">Donate Now</button>
+              <a href="#support-our-mission" className="btn btn-primary">Donate Now</a>
             </div>
           </div>
         </div>
@@ -68,10 +68,10 @@ export default function HeroSection() {
               🏛️ Building the Tallest Temple of Coastal Karnataka
             </div>
             <h1 className="hero-title">
-              Be Part of 
-              <span className="hero-title-highlight"> Divine History </span>
-               Support Our
-              <span className="hero-title-highlight"> Sacred Mission</span>
+              Be Part of{' '}
+              <span className="hero-title-highlight">Divine History</span>
+              {' '}— Support Our{' '}
+              <span className="hero-title-highlight">Sacred Mission</span>
             </h1>
             <p className="hero-description">
               Join us in constructing a magnificent Centre for Culture & Education at Govardhan Hills, Mangalore. 
@@ -95,12 +95,12 @@ export default function HeroSection() {
             </div>
 
             <div className="hero-actions">
-              <button className="btn btn-primary btn-large">
+              <a href="#support-our-mission" className="btn btn-primary btn-large">
                 Contribute to Temple
-              </button>
-              <button className="btn btn-secondary btn-large">
+              </a>
+              <a href="#construction-progress" className="btn btn-secondary btn-large">
                 View Progress
-              </button>
+              </a>
             </div>
 
             {/* Trust Badges */}
@@ -129,10 +129,10 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="scroll-indicator">
+      <a href="#choose-your-seva" className="scroll-indicator">
         <div className="scroll-text">Scroll to see the impact</div>
         <div className="scroll-arrow">↓</div>
-      </div>
+      </a>
     </div>
   );
 }

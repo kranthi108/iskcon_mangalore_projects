@@ -1,0 +1,71 @@
+import { pgTable, serial, varchar, numeric, integer, text, boolean, timestamp } from 'drizzle-orm/pg-core';
+
+export const donors = pgTable('donors', {
+  id: serial('id').primaryKey(),
+  name: varchar('name', { length: 255 }).notNull(),
+  email: varchar('email', { length: 255 }),
+  phone: varchar('phone', { length: 20 }).notNull().unique(),
+  houseNo: varchar('house_no', { length: 100 }),
+  street: varchar('street', { length: 255 }),
+  city: varchar('city', { length: 100 }),
+  state: varchar('state', { length: 100 }),
+  pincode: varchar('pincode', { length: 10 }),
+  pan: varchar('pan', { length: 20 }),
+  createdAt: timestamp('created_at').defaultNow(),
+});
+
+export const orders = pgTable('orders', {
+  id: serial('id').primaryKey(),
+  razorpayOrderId: varchar('razorpay_order_id', { length: 255 }).unique().notNull(),
+  donorId: integer('donor_id').references(() => donors.id),
+  amount: numeric('amount', { precision: 12, scale: 2 }).notNull(),
+  currency: varchar('currency', { length: 10 }).default('INR'),
+  sevaType: varchar('seva_type', { length: 255 }),
+  status: varchar('status', { length: 50 }).default('created'),
+  receipt: varchar('receipt', { length: 255 }),
+  paymentId: varchar('payment_id', { length: 255 }),
+  createdAtIst: varchar('created_at_ist', { length: 50 }),
+  updatedAtIst: varchar('updated_at_ist', { length: 50 }),
+  createdAt: timestamp('created_at').defaultNow(),
+  updatedAt: timestamp('updated_at').defaultNow(),
+});
+
+export const payments = pgTable('payments', {
+  id: serial('id').primaryKey(),
+  razorpayPaymentId: varchar('razorpay_payment_id', { length: 255 }).unique().notNull(),
+  razorpayOrderId: varchar('razorpay_order_id', { length: 255 }),
+  subscriptionId: varchar('subscription_id', { length: 255 }),
+  donorId: integer('donor_id').references(() => donors.id),
+  amount: numeric('amount', { precision: 12, scale: 2 }),
+  currency: varchar('currency', { length: 10 }).default('INR'),
+  method: varchar('method', { length: 50 }),
+  status: varchar('status', { length: 50 }),
+  type: varchar('type', { length: 50 }).default('onetime'),
+  verifiedVia: varchar('verified_via', { length: 50 }),
+  errorReason: text('error_reason'),
+  createdAtIst: varchar('created_at_ist', { length: 50 }),
+  updatedAtIst: varchar('updated_at_ist', { length: 50 }),
+  createdAt: timestamp('created_at').defaultNow(),
+  updatedAt: timestamp('updated_at').defaultNow(),
+});
+
+export const subscriptions = pgTable('subscriptions', {
+  id: serial('id').primaryKey(),
+  razorpaySubscriptionId: varchar('razorpay_subscription_id', { length: 255 }).unique().notNull(),
+  planId: varchar('plan_id', { length: 255 }),
+  donorId: integer('donor_id').references(() => donors.id),
+  amount: numeric('amount', { precision: 12, scale: 2 }),
+  sevaType: varchar('seva_type', { length: 255 }),
+  totalMonths: integer('total_months').default(12),
+  paidCount: integer('paid_count').default(0),
+  status: varchar('status', { length: 50 }).default('created'),
+  verifiedVia: varchar('verified_via', { length: 50 }),
+  createdAtIst: varchar('created_at_ist', { length: 50 }),
+  updatedAtIst: varchar('updated_at_ist', { length: 50 }),
+  createdAt: timestamp('created_at').defaultNow(),
+  updatedAt: timestamp('updated_at').defaultNow(),
+  activatedAt: timestamp('activated_at'),
+  cancelledAt: timestamp('cancelled_at'),
+  completedAt: timestamp('completed_at'),
+  lastChargedAt: timestamp('last_charged_at'),
+});

@@ -34,7 +34,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(26, 35, 51, 0.75) 0%, rgba(45, 55, 72, 0.70) 100%);
+  background: linear-gradient(135deg, rgba(26, 35, 51, 0.55) 0%, rgba(45, 55, 72, 0.50) 100%);
   z-index: 1;
 }
 
@@ -468,6 +468,9 @@
   text-align: center;
   color: rgba(255, 255, 255, 0.6);
   animation: bounce 2s infinite;
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 10;
 }
 
 .scroll-text {

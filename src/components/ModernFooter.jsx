@@ -69,7 +69,7 @@ export default function ModernFooter() {
             <div className="footer-column">
               <h4 className="footer-heading">Get Involved</h4>
               <ul className="footer-links">
-                <li><a href="#donate">Make a Donation</a></li>
+                <li><a href="#support-our-mission">Make a Donation</a></li>
                 <li><a href="#monthly">Monthly Giving</a></li>
                 <li><a href="#volunteer">Become a Volunteer</a></li>
                 <li><a href="#sponsor">Sponsor Construction</a></li>
@@ -102,9 +102,9 @@ export default function ModernFooter() {
                 </div>
               </div>
 
-              <button className="btn btn-primary footer-donate-btn">
+              <a href="#support-our-mission" className="btn btn-primary footer-donate-btn">
                 Donate Now
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -135,9 +135,9 @@ export default function ModernFooter() {
           <div className="sticky-message">
             🏗️ Construction Progress: <strong>4% Complete</strong> — ₹5.5 Cr more needed
           </div>
-          <button className="btn btn-primary btn-small">
+          <a href="#support-our-mission" className="btn btn-primary btn-small">
             Contribute Now
-          </button>
+          </a>
         </div>
         </div>
       </div>

@@ -1,0 +1,14 @@
+name = "iskcon-payment-worker"
+main = "src/index.js"
+compatibility_date = "2024-12-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# Non-secret env vars (optional defaults)
+# Actual secrets are set via: wrangler secret put VARIABLE_NAME
+
+# To set secrets run:
+# wrangler secret put RAZORPAY_KEY_ID
+# wrangler secret put RAZORPAY_KEY_SECRET
+# wrangler secret put RAZORPAY_WEBHOOK_SECRET
+# wrangler secret put DATABASE_URL

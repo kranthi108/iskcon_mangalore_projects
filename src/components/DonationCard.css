@@ -350,16 +350,20 @@
   }
 
   .donation-amounts {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 0.5rem;
   }
 
   .amount-btn {
-    padding: 0.75rem;
+    padding: 0.75rem 0.5rem;
   }
 
   .amount {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .amount-desc {
+    font-size: 0.75rem;
   }
 
   .badge-most {
@@ -370,5 +374,35 @@
 
   .card-header h3 {
     font-size: 1.25rem;
+  }
+
+  .premium-item {
+    padding: 0.5rem 0.65rem;
+  }
+
+  .premium-label {
+    font-size: 0.75rem;
+  }
+
+  .premium-amount {
+    font-size: 0.75rem;
+  }
+
+  .premium-header {
+    font-size: 0.78rem;
+  }
+
+  .donate-submit {
+    width: 100%;
+  }
+
+  .month-btn {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.75rem;
+  }
+
+  .tab {
+    font-size: 0.9rem;
+    padding: 0.6rem;
   }
 }

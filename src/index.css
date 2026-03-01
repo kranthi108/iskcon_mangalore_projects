@@ -253,9 +253,4 @@ button:disabled {
   .section {
     padding: var(--space-2xl) 0;
   }
-  
-  button, .btn {
-    width: 100%;
-    max-width: 100%;
-  }
 }

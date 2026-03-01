@@ -180,7 +180,7 @@ app.post('/api/webhook/razorpay', async (c) => {
 
 // --- CORS ---
 app.use('*', cors({
-  origin: ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:5175', 'https://iskcon-mangalore.pages.dev'],
+  origin: ['http://localhost:5173', 'https://projects.iskconmangalore.org'],
   allowMethods: ['GET', 'POST', 'OPTIONS'],
   allowHeaders: ['Content-Type'],
 }));

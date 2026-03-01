@@ -11,6 +11,12 @@
   right: 0;
   height: 200px;
   background: linear-gradient(to bottom, var(--color-bg-cream), white);
+  z-index: 0;
+}
+
+.testimonials-section .section-header {
+  position: relative;
+  z-index: 1;
 }
 
 .testimonials-container {

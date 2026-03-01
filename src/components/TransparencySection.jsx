@@ -48,23 +48,6 @@ export default function TransparencySection() {
             ))}
           </div>
         </div>
-
-        {/* Membership Privileges */}
-        <div className="section-header text-center membership-header">
-          <h2>Membership Privileges</h2>
-          <p className="section-subtitle">
-            Life patrons are offered the following privileges
-          </p>
-        </div>
-        <div className="membership-grid">
-          {membershipPrivileges.map((item, i) => (
-            <div key={i} className="membership-card">
-              <div className="membership-icon">{item.icon}</div>
-              <h3 className="membership-title">{item.title}</h3>
-              <p className="membership-desc">{item.description}</p>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

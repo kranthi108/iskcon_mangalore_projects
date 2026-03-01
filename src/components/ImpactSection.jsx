@@ -1,30 +1,53 @@
 import './ImpactSection.css';
 
 export default function ImpactSection() {
+    const membershipPrivileges = [
+      {
+        icon: '🪪',
+        title: 'Life-Membership Card',
+        description: 'Receive an exclusive Life-Membership Card recognizing your commitment to the divine mission.',
+      },
+      {
+        icon: '🙏',
+        title: 'Special Puja',
+        description: 'Personalized pujas on special occasions like birthdays, anniversaries, and auspicious days.',
+      },
+      {
+        icon: '🎪',
+        title: 'Festival Passes',
+        description: 'Priority passes for major festivals like Sri Krishna Janmashtami, Gaura Purnima, and more.',
+      },
+      {
+        icon: '🏨',
+        title: 'Guest House Facility',
+        description: 'Complimentary stay at the temple guest house during your visits to Govardhan Hills.',
+      },
+    ];
+
   const impactData = [
     {
       icon: '🍚',
-      number: '4%',
-      label: 'Construction Complete',
-      description: 'The main temple structure is taking shape beautifully.'
+//       number: 'Shri Krishna Prasadam',
+      label: 'Shri Krishna Prasadam',
+      description: 'Prasadam, offered to the Lord will be delivered to the mentioned address .'
     },
     {
       icon: '📚',
-      number: '5 Floors',
-      label: 'Tallest in Coastal Karnataka',
-      description: 'A magnificent beacon of spirituality and culture.'
+//       number: 'Books',
+      label: 'Books',
+      description: 'Books on Timeless Vedic Knowledge.'
     },
     {
       icon: '📿',
-      number: '1,000+',
-      label: 'Devotees Supported',
-      description: 'United by faith, building together with devotion.'
+//       number: 'Japa Meditation Kit',
+      label: 'Japa Meditation Kit',
+      description: 'Japa mala, Mantra card etc which are helpful for daily meditation activity.'
     },
     {
       icon: '🖼️️',
-      number: '100%',
-      label: 'Pure Dedication',
-      description: 'Every brick laid is an offering to the Divine.'
+//       number: 'Photo Frames',
+      label: 'Photo Frames',
+      description: 'Beautiful and all Attractive photo frames of the Lord.'
     }
   ];
 
@@ -48,7 +71,21 @@ export default function ImpactSection() {
             </div>
           ))}
         </div>
-
+        <div className="section-header text-center membership-header">
+                  <h2>Membership Privileges</h2>
+                  <p className="section-subtitle">
+                    Life patrons are offered the following privileges
+                  </p>
+                </div>
+                <div className="membership-grid">
+                  {membershipPrivileges.map((item, i) => (
+                    <div key={i} className="membership-card">
+                      <div className="membership-icon">{item.icon}</div>
+                      <h3 className="membership-title">{item.title}</h3>
+                      <p className="membership-desc">{item.description}</p>
+                    </div>
+                  ))}
+                </div>
         {/* Visual Divider */}
       </div>
     </section>

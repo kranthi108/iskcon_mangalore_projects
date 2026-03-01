@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import './HeroSection.css';
-import templeView1 from '../assets/001_temple_front_view.jpeg';
-import templeView2 from '../assets/right_side_view.png';
+import templeView1 from '../assets/2.png';
+import templeView2 from '../assets/4.png';
 import templeView3 from '../assets/side_view.png';
+import templeView4 from '../assets/5.png';
 import logoImg from '../assets/logo.png';
 
 export default function HeroSection() {
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
-  const backgroundImages = [templeView1, templeView2, templeView3];
+  const backgroundImages = [templeView1, templeView2, templeView3, templeView4];
   
   const constructionProgress = 45; // 45% complete
   const fundsRaised = 2.5; // In crores

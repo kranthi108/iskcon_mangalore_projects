@@ -4,7 +4,7 @@ import { registerDonor, initiatePayment, initiateSubscription } from '../utils/r
 import PaymentModal from './PaymentModal';
 import DonorForm from './DonorForm';
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8787/api';
+const API_BASE = import.meta.env.VITE_API_BASE || 'https://iskcon-payment-worker.vedicsciencecenter-clt.workers.dev/api';
 
 const DONATION_OPTIONS = [
   { id: 'brick', amount: 2100, label: 'Brick Seva' },

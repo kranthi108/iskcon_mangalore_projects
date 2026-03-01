@@ -57,9 +57,11 @@
 }
 
 .tab.active {
-  background: white;
-  box-shadow: var(--shadow-sm);
+  background: rgba(217, 121, 23, 0.15);
   color: var(--color-primary);
+  border: 1.5px solid rgba(217, 121, 23, 0.4);
+  box-shadow: 0 2px 6px rgba(217, 121, 23, 0.1);
+  font-weight: 700;
 }
 
 /* Donation Amounts */
@@ -189,6 +191,83 @@
   padding: 0.6rem 1rem;
   border-radius: 8px;
   margin-bottom: 1rem;
+}
+
+/* Premium Seva Options */
+.premium-seva-select {
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #fdf8f0, #fef6e8);
+  border: 2px solid #f0dbb8;
+  border-radius: 12px;
+  padding: 0.75rem;
+  overflow: hidden;
+}
+
+.premium-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #8b6914;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #f0dbb8;
+}
+
+.premium-icon {
+  font-size: 1rem;
+}
+
+.premium-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.premium-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0.85rem;
+  border: 1.5px solid #eedcb3;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.premium-item:hover {
+  border-color: #d4a843;
+  background: #fffaf1;
+  transform: translateX(3px);
+}
+
+.premium-item.active {
+  border-color: #b8860b;
+  background: linear-gradient(135deg, #fff7e6, #fff0d4);
+  box-shadow: 0 2px 8px rgba(184, 134, 11, 0.15);
+}
+
+.premium-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #5a4a1e;
+}
+
+.premium-item.active .premium-label {
+  color: #8b6914;
+}
+
+.premium-amount {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #b8860b;
+  white-space: nowrap;
 }
 
 /* Custom Amount */

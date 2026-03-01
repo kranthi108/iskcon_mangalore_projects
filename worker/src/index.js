@@ -532,6 +532,16 @@ app.post('/api/check-payment', async (c) => {
   }
 });
 
+app.get('/api/donor-count', async (c) => {
+  try {
+    const db = c.get('db');
+    const result = await db.select({ count: sql`count(*)` }).from(payments);
+    return c.json({ count: Number(result[0]?.count || 0) });
+  } catch (err) {
+    return c.json({ count: 0 });
+  }
+});
+
 // --- Admin: All Donations ---
 app.get('/api/donations', async (c) => {
   try {

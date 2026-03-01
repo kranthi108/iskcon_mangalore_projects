@@ -156,8 +156,8 @@ export default function HeroSection() {
                     <div className="amount-desc">Patron Seva</div>
                   </button>
                   <button className="amount-btn">
-                    <div className="amount">₹75,000</div>
-                    <div className="amount-desc">Membership Seva</div>
+                    <div className="amount">₹25,000</div>
+                    <div className="amount-desc">Special Patron Seva</div>
                   </button>
                 </div>
 

@@ -80,10 +80,10 @@ export default function HeroSection() {
             </p>
 
             <div className="hero-actions">
-              <a href="#support-our-mission" className="btn btn-primary btn-large">
+              <a href="#support-our-mission" className="btn btn-donate btn-large">
                 Donate Now
               </a>
-              <a href="#construction-progress" className="btn btn-secondary btn-large">
+              <a href="#construction-progress" className="btn btn-donate btn-large">
                 Construction Updates
               </a>
             </div>

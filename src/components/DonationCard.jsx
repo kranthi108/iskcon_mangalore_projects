@@ -1,14 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './DonationCard.css';
 import { registerDonor, initiatePayment, initiateSubscription } from '../utils/razorpay';
 import PaymentModal from './PaymentModal';
 import DonorForm from './DonorForm';
 
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8787/api';
+
 const DONATION_OPTIONS = [
-  { id: 'brick', amount: 2000, label: 'Brick Seva' },
+  { id: 'brick', amount: 2100, label: 'Brick Seva' },
   { id: 'sqfeet', amount: 5000, label: 'Sq. Feet Seva', popular: true },
   { id: 'patron', amount: 10000, label: 'Patron Seva' },
-  { id: 'membership', amount: 75000, label: 'Membership Seva' },
+  { id: 'membership', amount: 25000, label: 'Special Patron Seva' },
+];
+
+const PREMIUM_SEVAS = [
+  { amount: 108000, label: 'Dharma Sevak — ₹1,08,000' },
+  { amount: 555555, label: 'Dharmaadhikari — ₹5,55,555' },
+  { amount: 1055555, label: 'Maha Dharmaadhikari — ₹10,55,555' },
+  { amount: 2525108, label: 'Mukhya Dharmaadhikari — ₹25,25,108' },
+  { amount: 5050108, label: 'Vishesha Dharmaadhikari — ₹50,50,108' },
 ];
 
 const MONTH_OPTIONS = [3, 6, 12, 24];
@@ -21,10 +31,16 @@ export default function DonationCard() {
   const [showDonorForm, setShowDonorForm] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [paymentModal, setPaymentModal] = useState({ isOpen: false, status: null, details: null });
-  
-  const fundsRaised = 2.5;
-  const targetFunds = 8;
-  const percentage = Math.round((fundsRaised / targetFunds) * 100);
+  const [donorCount, setDonorCount] = useState(0);
+
+  useEffect(() => {
+    fetch(`${API_BASE}/donor-count`)
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.count != null) setDonorCount(data.count);
+      })
+      .catch(() => {});
+  }, []);
 
   const isMonthly = donationType === 'monthly';
 
@@ -48,6 +64,8 @@ export default function DonationCard() {
     if (selectedAmount) {
       const match = DONATION_OPTIONS.find((o) => o.amount === selectedAmount);
       if (match) return match.label;
+      const premMatch = PREMIUM_SEVAS.find((o) => o.amount === selectedAmount);
+      if (premMatch) return premMatch.label.split(' — ')[0];
     }
     return 'Custom Donation';
   };
@@ -168,10 +186,31 @@ export default function DonationCard() {
               ))}
             </div>
 
+            {!isMonthly && (
+              <div className="premium-seva-select">
+                <div className="premium-header">
+                  <span className="premium-icon">👑</span>
+                  <span>Membership Seva Options</span>
+                </div>
+                <div className="premium-list">
+                  {PREMIUM_SEVAS.map((seva) => (
+                    <button
+                      key={seva.amount}
+                      className={`premium-item ${selectedAmount === seva.amount ? 'active' : ''}`}
+                      onClick={() => handleAmountClick(seva.amount)}
+                    >
+                      <span className="premium-label">{seva.label.split(' — ')[0]}</span>
+                      <span className="premium-amount">₹{seva.amount.toLocaleString('en-IN')}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <div className="custom-amount">
               <input 
                 type="text" 
-                placeholder={isMonthly ? 'Enter monthly amount (₹)' : 'Enter custom amount (₹)'}
+                placeholder={isMonthly ? 'Enter monthly amount (₹)' : 'Enter your custom amount (₹)'}
                 className="amount-input"
                 value={customAmount}
                 onChange={handleCustomChange}
@@ -189,7 +228,7 @@ export default function DonationCard() {
             </button>
 
             <div className="recent-donation">
-              🔥 <strong>125+ devotees</strong> contributed this month
+              🔥 <strong>{donorCount > 0 ? `${donorCount}+` : '...'} devotees</strong> contributed so far
             </div>
           </div>
         </div>

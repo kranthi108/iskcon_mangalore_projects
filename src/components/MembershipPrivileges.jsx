@@ -1,6 +1,6 @@
-import './TransparencySection.css';
+import './MembershipPrivileges.css';
 
-const membershipPrivileges = [
+const privileges = [
   {
     icon: '🪪',
     title: 'Life-Membership Card',
@@ -23,41 +23,18 @@ const membershipPrivileges = [
   },
 ];
 
-export default function TransparencySection() {
-  const facilities = [
-    { name: 'Mukhya Mandira (Main Temple)', icon: '🏛️' },
-    { name: 'Annadana Hall', icon: '🍽️' },
-    { name: 'Goshala (Cow Shelter)', icon: '🐄' },
-    { name: 'Yoga Center', icon: '🧘' },
-    { name: 'Guest House', icon: '🏨' },
-    { name: 'Vedic School', icon: '📚' }
-  ];
-
+export default function MembershipPrivileges() {
   return (
-    <section className="transparency-section section">
+    <section className="membership-section section">
       <div className="container">
-        {/* Donor Privileges */}
-        <div className="hospitals-section">
-          <h3 className="hospitals-heading">Our Donor Privileges</h3>
-          <div className="hospitals-grid">
-            {facilities.map((facility, index) => (
-              <div key={index} className="hospital-badge">
-                <span className="hospital-icon">{facility.icon}</span>
-                <span className="hospital-name">{facility.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Membership Privileges */}
-        <div className="section-header text-center membership-header">
+        <div className="section-header text-center">
           <h2>Membership Privileges</h2>
           <p className="section-subtitle">
             Life patrons are offered the following privileges
           </p>
         </div>
         <div className="membership-grid">
-          {membershipPrivileges.map((item, i) => (
+          {privileges.map((item, i) => (
             <div key={i} className="membership-card">
               <div className="membership-icon">{item.icon}</div>
               <h3 className="membership-title">{item.title}</h3>

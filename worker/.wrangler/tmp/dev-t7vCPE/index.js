@@ -23241,7 +23241,7 @@ app.post("/api/webhook/razorpay", async (c) => {
   }
 });
 app.use("*", cors({
-  origin: ["http://localhost:5173", "http://localhost:5174", "http://localhost:5175", "https://iskcon-mangalore.pages.dev"],
+  origin: ["http://localhost:5173", "https://projects.iskconmangalore.org"],
   allowMethods: ["GET", "POST", "OPTIONS"],
   allowHeaders: ["Content-Type"]
 }));
@@ -23532,6 +23532,15 @@ app.post("/api/check-payment", async (c) => {
   } catch (err) {
     console.error("Check payment error:", err);
     return c.json({ success: false, message: err.message }, 500);
+  }
+});
+app.get("/api/donor-count", async (c) => {
+  try {
+    const db = c.get("db");
+    const result = await db.select({ count: sql`count(*)` }).from(payments);
+    return c.json({ count: Number(result[0]?.count || 0) });
+  } catch (err) {
+    return c.json({ count: 0 });
   }
 });
 app.get("/api/donations", async (c) => {

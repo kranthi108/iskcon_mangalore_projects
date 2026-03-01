@@ -261,6 +261,15 @@ const routes = {
     json(res, { status: 'ok' });
   },
 
+  'GET /api/donor-count': async (_req, res) => {
+    try {
+      const result = await db.select({ count: rawSql`count(*)` }).from(payments);
+      json(res, { count: Number(result[0]?.count || 0) });
+    } catch {
+      json(res, { count: 0 });
+    }
+  },
+
   'GET /api/donations': async (_req, res) => {
     const result = await db.select({
       paymentId: payments.razorpayPaymentId, amount: payments.amount,

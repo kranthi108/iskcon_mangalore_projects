@@ -3,7 +3,9 @@ import './SevaOpportunitiesSection.css';
 import annadanaImg from '../assets/annadana.avif';
 import gosevaImg from '../assets/goseva.jpg';
 import dwaraImg from '../assets/dwajastambha.jpg';
-import constructionImg from '../assets/1.jpeg';
+import volunteer from '../assets/volunteer.jpg';
+import yagna from '../assets/yagna.jpg';
+import pond from '../assets/pond.jpeg';
 import { registerDonor, initiatePayment } from '../utils/razorpay';
 import PaymentModal from './PaymentModal';
 import DonorForm from './DonorForm';
@@ -19,9 +21,9 @@ export default function SevaOpportunitiesSection() {
       title: 'Annadana Hall Seva',
       tagline: 'Feed the Hungry, Serve the Divine',
       description: 'A sacred space where thousands will receive hot, nutritious prasadam daily. Help us build a state-of-the-art kitchen and dining hall.',
-      sevaAmount: 108000,
-      sevaAmountLabel: '₹1,08,000',
-      totalSlots: 365,
+      sevaAmount: 255555,
+      sevaAmountLabel: '₹2,55,555',
+      totalSlots: 50,
       image: annadanaImg,
       color: '#d97917'
     },
@@ -36,12 +38,12 @@ export default function SevaOpportunitiesSection() {
       color: '#0b6e4f'
     },
     {
-      title: 'Dwara Seva',
-      tagline: 'Gateway to the Divine',
-      description: 'Contribute to the construction of the magnificent temple entrance — the sacred gateway through which devotees will enter for darshan.',
-      sevaAmount: 108000,
-      sevaAmountLabel: '₹1,08,000',
-      totalSlots: 365,
+      title: 'Dwaja Sthambha Seva',
+      tagline: 'The Sacred Pillar of Devotion',
+      description: 'Contribute to the construction of the sacred Dwaja Sthambha — the divine flagpole that stands as a symbol of the Lord\u2019s presence and glory.',
+      sevaAmount: 55555,
+      sevaAmountLabel: '₹55,555',
+      totalSlots: 10,
       image: dwaraImg,
       color: '#7b1f1f'
     },
@@ -52,8 +54,28 @@ export default function SevaOpportunitiesSection() {
       sevaAmount: 108000,
       sevaAmountLabel: '₹1,08,000',
       totalSlots: 365,
-      image: constructionImg,
+      image: volunteer,
       color: '#1a5490'
+    },
+    {
+      title: 'Yagna Shala',
+      tagline: 'Sacred Fire, Eternal Blessings',
+      description: 'Help construct the Yagna Shala — a dedicated space for Vedic fire ceremonies, homas, and spiritual rituals that invoke divine grace.',
+      sevaAmount: 555555,
+      sevaAmountLabel: '₹5,55,555',
+      totalSlots: 8,
+      image: yagna,
+      color: '#b45309'
+    },
+    {
+      title: 'Pushkarini (Temple Pond)',
+      tagline: 'Holy Waters of Purification',
+      description: 'Sponsor the construction of the sacred temple pond — a traditional Pushkarini for devotees to perform ablutions and holy rituals.',
+      sevaAmount: 555555,
+      sevaAmountLabel: '₹5,55,555',
+      totalSlots: 10,
+      image: pond,
+      color: '#1e6091'
     }
   ];
 
@@ -96,7 +118,6 @@ export default function SevaOpportunitiesSection() {
     <section id="choose-your-seva" className="seva-opportunities-section section-lg">
       <div className="container">
         <div className="section-header text-center">
-          <div className="section-badge">Ways to Contribute</div>
           <h2>Choose Your Seva</h2>
           <p className="section-subtitle">
             Every seva is an offering to the Divine. Choose the cause closest to your heart.

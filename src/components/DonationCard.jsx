@@ -10,7 +10,7 @@ const DONATION_OPTIONS = [
   { id: 'brick', amount: 2100, label: 'Brick Seva' },
   { id: 'sqfeet', amount: 5000, label: 'Sq. Feet Seva', popular: true },
   { id: 'patron', amount: 10000, label: 'Patron Seva' },
-  { id: 'membership', amount: 25000, label: 'Special Patron Seva' },
+  { id: 'membership', amount: 25000, label: 'Special Patron' },
 ];
 
 const PREMIUM_SEVAS = [

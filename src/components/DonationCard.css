@@ -7,6 +7,7 @@
 .donation-card-centered {
   max-width: 600px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .donation-card {
@@ -355,21 +356,27 @@
   }
 
   .amount-btn {
-    padding: 0.75rem 0.5rem;
+    padding: 0.6rem 0.4rem;
+    overflow: hidden;
   }
 
   .amount {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
   }
 
   .amount-desc {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .badge-most {
-    font-size: 0.6rem;
-    top: -6px;
-    right: -4px;
+    font-size: 0.5rem;
+    top: -5px;
+    right: -3px;
+    padding: 0.15rem 0.35rem;
   }
 
   .card-header h3 {

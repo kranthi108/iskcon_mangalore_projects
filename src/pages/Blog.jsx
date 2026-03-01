@@ -1,5 +1,6 @@
 import HeroSection from '../components/HeroSection';
 import ImpactSection from '../components/ImpactSection';
+import MembershipBenefits from '../components/MembershipBenefits'
 import DonationCard from '../components/DonationCard';
 import ConstructionUpdates from '../components/ConstructionUpdates';
 import TestimonialsSection from '../components/TestimonialsSection';
@@ -14,6 +15,7 @@ export default function Blog() {
       <HeroSection />
       <DonationCard />
       <ImpactSection />
+{/*       <MembershipBenefits /> */}
       <ConstructionUpdates />
       <SevaOpportunitiesSection />
       <TestimonialsSection />

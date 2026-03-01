@@ -14,7 +14,7 @@ export default function ModernFooter() {
                   <img src={logoImg} alt="ISKCON Logo" className="logo-image" />
                 </div>
                 <div>
-                  <h3 className="footer-brand-name">ISKCON Mangalore</h3>
+                  <h3 className="footer-brand-name">ISKCON Mangalore, Govardhan Hills</h3>
                   <p className="footer-tagline">Centre for Culture & Education</p>
                 </div>
               </div>
@@ -86,19 +86,19 @@ export default function ModernFooter() {
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 0C7.589 0 4 3.589 4 8c0 4.245 7.273 15.107 7.583 15.577a1 1 0 0 0 .834.423 1 1 0 0 0 .833-.423C13.727 23.107 21 12.245 21 8c0-4.411-3.589-8-9-8zm0 11.5c-1.93 0-3.5-1.57-3.5-3.5S10.07 4.5 12 4.5s3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
                   </svg>
-                  <span>Govardhan Hills, Benjanapadavu, Mangalore - 575 002</span>
+                  <span>Govardhan Hills, Benjanapadavu, Mangalore - 575002</span>
                 </div>
                 <div className="contact-item">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                   </svg>
-                  <span>+91 824 2225 512</span>
+                  <span>+91 9686107444</span>
                 </div>
                 <div className="contact-item">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                   </svg>
-                  <span>info@iskconmangalore.org</span>
+                  <span>contact@iskconmangalore.org</span>
                 </div>
               </div>
 
@@ -129,18 +129,18 @@ export default function ModernFooter() {
       </div>
 
       {/* Sticky Bottom Bar */}
-      <div className="sticky-bottom-bar">
-        <div className="container">
-        <div className="sticky-content">
-          <div className="sticky-message">
-            🏗️ Construction Progress: <strong>4% Complete</strong> — ₹5.5 Cr more needed
-          </div>
-          <a href="#support-our-mission" className="btn btn-primary btn-small">
-            Contribute Now
-          </a>
-        </div>
-        </div>
-      </div>
+{/*       <div className="sticky-bottom-bar"> */}
+{/*         <div className="container"> */}
+{/*         <div className="sticky-content"> */}
+{/*           <div className="sticky-message"> */}
+{/*             🏗️ Construction Progress: <strong>4% Complete</strong> — ₹5.5 Cr more needed */}
+{/*           </div> */}
+{/*           <a href="#support-our-mission" className="btn btn-primary btn-small"> */}
+{/*             Contribute Now */}
+{/*           </a> */}
+{/*         </div> */}
+{/*         </div> */}
+{/*       </div> */}
     </footer>
   );
 }

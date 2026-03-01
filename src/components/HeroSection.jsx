@@ -79,27 +79,12 @@ export default function HeroSection() {
               learning, and community service.
             </p>
 
-            <div className="hero-stats-inline">
-              <div className="stat-item">
-                <div className="stat-icon">🏗️</div>
-                <div className="stat-text">
-                  <strong>{constructionProgress}% Complete</strong>
-                </div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-icon">🙏</div>
-                <div className="stat-text">
-                  <strong>₹{fundsRaised} Cr</strong> raised of ₹{targetFunds} Cr
-                </div>
-              </div>
-            </div>
-
             <div className="hero-actions">
               <a href="#support-our-mission" className="btn btn-primary btn-large">
-                Contribute to Temple
+                Donate Now
               </a>
               <a href="#construction-progress" className="btn btn-secondary btn-large">
-                View Progress
+                Construction Updates
               </a>
             </div>
 

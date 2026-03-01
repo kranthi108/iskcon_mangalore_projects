@@ -191,17 +191,6 @@ export default function DonationCard() {
             <div className="recent-donation">
               🔥 <strong>125+ devotees</strong> contributed this month
             </div>
-
-            <div className="goal-progress">
-              <div className="goal-header">
-                <span>Construction Progress</span>
-                <span><strong>₹{fundsRaised} Cr</strong> / ₹{targetFunds} Cr</span>
-              </div>
-              <div className="progress-bar">
-                <div className="progress-fill" style={{ width: `${percentage}%` }}></div>
-              </div>
-              <p className="goal-text">₹{(targetFunds - fundsRaised).toFixed(1)} Cr needed to complete the project</p>
-            </div>
           </div>
         </div>
       </div>

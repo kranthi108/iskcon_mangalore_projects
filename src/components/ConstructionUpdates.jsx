@@ -98,7 +98,7 @@ export default function ConstructionUpdates() {
     <section id="construction-progress" className="construction-updates section">
       <div className="container">
         <div className="section-header text-center">
-          <h2 className="construction-title">Construction Status — as on February 2026</h2>
+          <h2 className="construction-title">Construction Status — as on March 2026</h2>
           <p className="construction-subtitle">
             The construction of the <strong>Garbha Griha</strong> of{' '}
             <span className="highlight-text">Sri Radha Krishna Temple</span>{' '}

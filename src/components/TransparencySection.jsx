@@ -52,27 +52,6 @@ export default function TransparencySection() {
   return (
     <section className="transparency-section section">
       <div className="container">
-        {/* Main Heading */}
-        <div className="section-header text-center">
-          <h2>100% Transparent. 100% Tax Exempt.</h2>
-          <p className="section-subtitle">
-            We believe in absolute accountability. Here is how we protect your contribution.
-          </p>
-        </div>
-
-        {/* Trust Features Grid */}
-        <div className="trust-grid">
-          {trustFeatures.map((feature, index) => (
-            <div key={index} className="trust-feature">
-              <div className="trust-icon">
-                {feature.icon}
-              </div>
-              <h3 className="trust-title">{feature.title}</h3>
-              <p className="trust-description">{feature.description}</p>
-            </div>
-          ))}
-        </div>
-
         {/* Facilities Section */}
         <div className="hospitals-section">
           <h3 className="hospitals-heading">What We're Building</h3>
@@ -83,25 +62,6 @@ export default function TransparencySection() {
                 <span className="hospital-name">{facility.name}</span>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="transparency-cta">
-          <div className="cta-content">
-            <h3>Every rupee is accounted for</h3>
-            <p>
-              100% of your donation goes directly to construction and project development. 
-              All administrative costs are covered separately by the trust fund.
-            </p>
-            <div className="cta-actions">
-              <button className="btn btn-primary btn-large">
-                Make a Donation
-              </button>
-              <button className="btn btn-secondary btn-large">
-                View Project Reports
-              </button>
-            </div>
           </div>
         </div>
       </div>

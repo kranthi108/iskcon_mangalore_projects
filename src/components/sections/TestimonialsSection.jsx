@@ -77,12 +77,12 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Call to Action */}
-        <div className="testimonials-cta">
-          <h3>Join hundreds of devotees in building this sacred temple</h3>
-          <button className="btn btn-primary btn-large">
-            Make Your Contribution
-          </button>
-        </div>
+{/*         <div className="testimonials-cta"> */}
+{/*           <h3>Join hundreds of devotees in building this sacred temple</h3> */}
+{/*           <button className="btn btn-primary btn-large"> */}
+{/*             Make Your Contribution */}
+{/*           </button> */}
+{/*         </div> */}
       </div>
     </section>
   );

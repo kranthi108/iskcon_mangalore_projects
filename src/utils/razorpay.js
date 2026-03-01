@@ -1,6 +1,6 @@
 // In production, replace with your Cloudflare Worker URL:
 // e.g., https://iskcon-payment-worker.YOUR_SUBDOMAIN.workers.dev/api
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://iskcon-payment-worker.vedicsciencecenter-clt.workers.dev/api';
+const API_BASE = import.meta.env.VITE_API_BASE || 'https://iskcon-payment-worker.vedicsciencecenter-clt.workers.dev/api';
 
 // Register donor and get donorId
 export async function registerDonor(donorInfo) {

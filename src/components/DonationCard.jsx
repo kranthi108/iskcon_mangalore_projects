@@ -15,7 +15,7 @@ const DONATION_OPTIONS = [
 
 const PREMIUM_SEVAS = [
   { amount: 108000, label: 'Dharma Sevak — ₹1,08,000' },
-  { amount: 255555, label: 'Dharma Karta - ₹2,55,555' }
+  { amount: 255555, label: 'Dharma Karta — ₹2,55,555' },
   { amount: 555555, label: 'Dharmaadhikari — ₹5,55,555' },
   { amount: 1055555, label: 'Maha Dharmaadhikari — ₹10,55,555' },
   { amount: 2525108, label: 'Mukhya Dharmaadhikari — ₹25,25,108' },

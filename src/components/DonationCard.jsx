@@ -9,8 +9,6 @@ const API_BASE = import.meta.env.VITE_API_BASE || 'https://iskcon-payment-worker
 const DONATION_OPTIONS = [
   { id: 'brick', amount: 2100, label: 'Brick Seva' },
   { id: 'sqfeet', amount: 5000, label: 'Sq. Feet Seva', popular: true },
-  { id: 'patron', amount: 10000, label: 'Patron Seva' },
-  { id: 'membership', amount: 25000, label: 'Special Patron' },
 ];
 
 const PREMIUM_SEVAS = [
@@ -33,6 +31,7 @@ export default function DonationCard() {
   const [isLoading, setIsLoading] = useState(false);
   const [paymentModal, setPaymentModal] = useState({ isOpen: false, status: null, details: null });
   const [donorCount, setDonorCount] = useState(0);
+  const [sevaQuantities, setSevaQuantities] = useState({ brick: 1, sqfeet: 1 });
 
   useEffect(() => {
     fetch(`${API_BASE}/donor-count`)
@@ -45,9 +44,24 @@ export default function DonationCard() {
 
   const isMonthly = donationType === 'monthly';
 
-  const handleAmountClick = (amount) => {
-    setSelectedAmount(amount);
-    setCustomAmount(amount.toLocaleString('en-IN'));
+  const handleAmountClick = (option) => {
+    const total = option.amount * sevaQuantities[option.id];
+    setSelectedAmount(total);
+    setCustomAmount(total.toLocaleString('en-IN'));
+  };
+
+  const handleQuantityChange = (optionId, delta) => {
+    setSevaQuantities((prev) => {
+      const newQty = Math.max(1, (prev[optionId] || 1) + delta);
+      const updated = { ...prev, [optionId]: newQty };
+      const option = DONATION_OPTIONS.find((o) => o.id === optionId);
+      if (option) {
+        const total = option.amount * newQty;
+        setSelectedAmount(total);
+        setCustomAmount(total.toLocaleString('en-IN'));
+      }
+      return updated;
+    });
   };
 
   const handleCustomChange = (e) => {
@@ -63,8 +77,12 @@ export default function DonationCard() {
 
   const getSevaLabel = () => {
     if (selectedAmount) {
-      const match = DONATION_OPTIONS.find((o) => o.amount === selectedAmount);
-      if (match) return match.label;
+      for (const o of DONATION_OPTIONS) {
+        const qty = sevaQuantities[o.id] || 1;
+        if (selectedAmount === o.amount * qty) {
+          return qty > 1 ? `${qty} × ${o.label}` : o.label;
+        }
+      }
       const premMatch = PREMIUM_SEVAS.find((o) => o.amount === selectedAmount);
       if (premMatch) return premMatch.label.split(' — ')[0];
     }
@@ -173,18 +191,40 @@ export default function DonationCard() {
             )}
 
             <div className="donation-amounts">
-              {DONATION_OPTIONS.map((option) => (
-                <button
-                  key={option.id}
-                  className={`amount-btn ${selectedAmount === option.amount ? 'active' : ''}`}
-                  onClick={() => handleAmountClick(option.amount)}
-                >
-                  <div className="amount">₹{option.amount.toLocaleString('en-IN')}</div>
-                  <div className="amount-desc">{option.label}</div>
-                  {isMonthly && <div className="amount-freq">/month</div>}
-                  {option.popular && !isMonthly && <div className="badge-most">Most Popular</div>}
-                </button>
-              ))}
+              {DONATION_OPTIONS.map((option) => {
+                const qty = sevaQuantities[option.id] || 1;
+                const totalAmt = option.amount * qty;
+                const isActive = selectedAmount === totalAmt;
+                return (
+                  <div key={option.id} className={`seva-card ${isActive ? 'active' : ''}`}>
+                    <button
+                      className="qty-btn qty-minus"
+                      onClick={() => handleQuantityChange(option.id, -1)}
+                      disabled={qty <= 1}
+                      aria-label="Decrease quantity"
+                    >
+                      −
+                    </button>
+                    <button
+                      className="seva-card-body"
+                      onClick={() => handleAmountClick(option)}
+                    >
+                      {qty > 1 && <div className="qty-label">{qty} × ₹{option.amount.toLocaleString('en-IN')}</div>}
+                      <div className="amount">₹{totalAmt.toLocaleString('en-IN')}</div>
+                      <div className="amount-desc">{option.label}</div>
+                      {isMonthly && <div className="amount-freq">/month</div>}
+                      {option.popular && !isMonthly && <div className="badge-most">Most Popular</div>}
+                    </button>
+                    <button
+                      className="qty-btn qty-plus"
+                      onClick={() => handleQuantityChange(option.id, 1)}
+                      aria-label="Increase quantity"
+                    >
+                      +
+                    </button>
+                  </div>
+                );
+              })}
             </div>
 
             {!isMonthly && (
@@ -198,7 +238,7 @@ export default function DonationCard() {
                     <button
                       key={seva.amount}
                       className={`premium-item ${selectedAmount === seva.amount ? 'active' : ''}`}
-                      onClick={() => handleAmountClick(seva.amount)}
+                      onClick={() => { setSelectedAmount(seva.amount); setCustomAmount(seva.amount.toLocaleString('en-IN')); }}
                     >
                       <span className="premium-label">{seva.label.split(' — ')[0]}</span>
                       <span className="premium-amount">₹{seva.amount.toLocaleString('en-IN')}</span>
@@ -240,6 +280,9 @@ export default function DonationCard() {
         onSubmit={handleDonorSubmit}
         onClose={() => setShowDonorForm(false)}
         isLoading={isLoading}
+        amount={getFinalAmount()}
+        sevaLabel={getSevaLabel()}
+        isMonthly={isMonthly}
       />
 
       <PaymentModal

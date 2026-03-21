@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './DonorForm.css';
 
-export default function DonorForm({ isOpen, onSubmit, onClose, isLoading }) {
+export default function DonorForm({ isOpen, onSubmit, onClose, isLoading, amount, sevaLabel, isMonthly }) {
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -39,6 +39,15 @@ export default function DonorForm({ isOpen, onSubmit, onClose, isLoading }) {
     <div className="donor-form-overlay" onClick={onClose}>
       <div className="donor-form-modal" onClick={(e) => e.stopPropagation()}>
         <button className="donor-form-close" onClick={onClose}>✕</button>
+
+        {amount > 0 && (
+          <div className="donor-amount-banner">
+            <div className="donor-amount-value">₹{amount.toLocaleString('en-IN')}</div>
+            <div className="donor-amount-label">
+              {sevaLabel}{isMonthly ? ' / month' : ' — One-time'}
+            </div>
+          </div>
+        )}
 
         <h2 className="donor-form-title">Donor Information</h2>
         <p className="donor-form-subtitle">Please provide your details to proceed with the donation</p>

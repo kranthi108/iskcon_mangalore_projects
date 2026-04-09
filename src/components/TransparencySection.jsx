@@ -38,7 +38,7 @@ export default function TransparencySection() {
       <div className="container">
         {/* Donor Privileges */}
         <div className="hospitals-section">
-          <h3 className="hospitals-heading">Our Donor Privileges</h3>
+          <h3 className="hospitals-heading">Project Highlights</h3>
           <div className="hospitals-grid">
             {facilities.map((facility, index) => (
               <div key={index} className="hospital-badge">

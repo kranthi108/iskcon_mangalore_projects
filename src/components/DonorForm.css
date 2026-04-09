@@ -56,6 +56,30 @@
   background: #ddd;
 }
 
+/* Amount Banner */
+.donor-amount-banner {
+  background: linear-gradient(135deg, #fff7eb, #fff0d6);
+  border: 1.5px solid #f0dbb8;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.donor-amount-value {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #d97917;
+  line-height: 1.2;
+}
+
+.donor-amount-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #8b6914;
+  margin-top: 0.25rem;
+}
+
 .donor-form-title {
   font-size: 1.4rem;
   font-weight: 700;

@@ -17,9 +17,9 @@ const ANNADANA_SEVAS = [
 ];
 
 const FESTIVAL_SEVAS = [
-  { id: 'abhisheka', amount: 2100, label: 'Special Abhisheka Seva', icon: '🪔', description: 'Sponsor the sacred abhisheka of Sri Sri Radha Govinda on Akshaya Tritiya' },
+  { id: 'abhisheka', amount: 2100, label: 'Special Abhisheka Seva', icon: '🪔', description: 'Sponsor the sacred abhisheka of Sri Sri Krishna Balaram on Akshaya Tritiya' },
   { id: 'pushpa', amount: 3001, label: 'Pushpa Seva (Flower Decoration)', icon: '🌺', description: 'Offer flowers for the divine decoration of Their Lordships' },
-  { id: 'vastra', amount: 5001, label: 'Vastra Seva (New Attire)', icon: '👑', description: 'Sponsor new divine attire for Sri Sri Radha Govinda' },
+  { id: 'vastra', amount: 5001, label: 'Vastra Seva (New Attire)', icon: '👑', description: 'Sponsor new divine attire for Sri Sri Krishna Balaram' },
   { id: 'bhog', amount: 5100, label: 'Maha Bhog Seva', icon: '🍚', description: 'Sponsor the grand bhog offering on this auspicious day' },
 ];
 

@@ -113,7 +113,7 @@ export default function AkshayaTritiya() {
             <p className="at-hero-subtitle">
               On this most auspicious day, every act of charity brings infinite, 
               imperishable merit. Offer Annadana and divine sevas at ISKCON Mangalore 
-              and receive the eternal blessings of Sri Sri Radha Govinda.
+              and receive the eternal blessings of Sri Sri Krishna Balaram.
             </p>
             <div className="at-hero-quote">
               <em>"Annadanam Maha Danam"</em> — The gift of food is the greatest charity

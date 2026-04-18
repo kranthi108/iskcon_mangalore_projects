@@ -1,0 +1,715 @@
+/* ===== Akshaya Tritiya Page ===== */
+
+.akshaya-page {
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+/* --- Navigation --- */
+.at-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(26, 35, 51, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.75rem 0;
+}
+
+.at-nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.at-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: white;
+}
+
+.at-nav-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.at-nav-name {
+  display: block;
+  font-weight: 700;
+  font-size: 1rem;
+  color: white;
+  line-height: 1.2;
+}
+
+.at-nav-sub {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-primary-light);
+  font-weight: 500;
+}
+
+.at-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.at-nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.at-nav-link:hover {
+  color: var(--color-primary-light);
+}
+
+/* --- Hero Section --- */
+.at-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    linear-gradient(135deg, #1a0a00 0%, #3d1f00 30%, #6b3410 60%, #d97917 100%);
+  overflow: hidden;
+}
+
+.at-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(217, 121, 23, 0.3) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(255, 167, 38, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.at-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.at-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.at-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 8rem 0 4rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.at-hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  color: var(--color-warning);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.at-hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: white;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.at-hero-highlight {
+  background: linear-gradient(135deg, var(--color-warning), var(--color-primary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.at-hero-subtitle {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.at-hero-quote {
+  color: var(--color-warning);
+  font-size: 1.25rem;
+  font-family: var(--font-secondary);
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.02em;
+}
+
+.at-hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.at-hero-actions .btn-secondary {
+  background: transparent;
+  color: white;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.at-hero-actions .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  color: white;
+}
+
+/* --- About Section --- */
+.at-about {
+  padding: var(--space-3xl) 0;
+  background: var(--color-bg-cream);
+}
+
+.at-about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.at-about-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.at-about-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.at-about-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.at-about-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-secondary);
+}
+
+.at-about-card p {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* --- Tab Navigation --- */
+.at-tabs-wrapper {
+  position: sticky;
+  top: 65px;
+  z-index: 50;
+  background: white;
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.75rem 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.at-tabs {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.at-tab {
+  background: var(--color-bg-light);
+  color: var(--color-text-light);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.at-tab:hover {
+  background: var(--color-bg-cream);
+  color: var(--color-primary);
+}
+
+.at-tab.active {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+/* --- Sections Common --- */
+.at-section {
+  padding: var(--space-3xl) 0;
+}
+
+.at-section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.at-section-header h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--color-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.at-section-header p {
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- Scripture Banner --- */
+.at-scripture-banner {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-light) 100%);
+  border-radius: var(--radius-xl);
+  padding: 2rem 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.at-scripture-text {
+  color: var(--color-warning);
+  font-family: var(--font-secondary);
+  font-size: 1.15rem;
+  font-style: italic;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.at-scripture-meaning {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+}
+
+/* --- Annadana Grid --- */
+.at-annadana-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.at-anna-card {
+  position: relative;
+  background: white;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.at-anna-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.at-anna-card.popular {
+  border-color: var(--color-primary);
+  background: linear-gradient(to bottom, #fef6ed, white);
+}
+
+.at-anna-badge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-primary);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.at-anna-devotees {
+  margin-bottom: 0.75rem;
+}
+
+.at-anna-count {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.at-anna-label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 0.25rem;
+}
+
+.at-anna-amount {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+.at-anna-btn {
+  width: 100%;
+}
+
+/* --- Custom Donation --- */
+.at-custom-donation {
+  text-align: center;
+  padding: 2rem;
+  background: var(--color-bg-light);
+  border-radius: var(--radius-xl);
+}
+
+.at-custom-donation h4 {
+  margin-bottom: 1rem;
+  color: var(--color-secondary);
+  font-size: 1.1rem;
+}
+
+.at-custom-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.at-custom-input {
+  flex: 1;
+  padding: 0.875rem 1.25rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  font-family: var(--font-primary);
+  transition: border-color var(--transition-base);
+  outline: none;
+}
+
+.at-custom-input:focus {
+  border-color: var(--color-primary);
+}
+
+/* --- Festival Sevas Grid --- */
+.at-festival {
+  background: var(--color-bg-cream);
+}
+
+.at-festival-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.at-festival-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  border: 2px solid transparent;
+}
+
+.at-festival-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-primary);
+}
+
+.at-festival-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.at-festival-name {
+  font-size: 1.15rem;
+  color: var(--color-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.at-festival-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.at-festival-amount {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 1.25rem;
+}
+
+.at-festival-card .btn {
+  width: 100%;
+}
+
+/* --- Sudama Seva --- */
+.at-sudama .at-sudama-verse {
+  font-family: var(--font-secondary);
+  color: var(--color-primary-dark);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+}
+
+.at-sudama-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.at-sudama-card {
+  background: white;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.at-sudama-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.at-sudama-name {
+  font-size: 1.1rem;
+  color: var(--color-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.at-sudama-amount {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 1.25rem;
+}
+
+.at-sudama-period {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.at-sudama-card .btn {
+  width: 100%;
+}
+
+/* --- Gita Banner --- */
+.at-gita-banner {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, #2d3748 100%);
+  padding: var(--space-3xl) 0;
+}
+
+.at-gita-content {
+  text-align: center;
+}
+
+.at-gita-ref {
+  color: var(--color-warning);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+
+.at-gita-quote {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-secondary);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  font-style: italic;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* --- Trust Section --- */
+.at-trust {
+  padding: var(--space-2xl) 0;
+  background: var(--color-bg-light);
+}
+
+.at-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.at-trust-item {
+  text-align: center;
+}
+
+.at-trust-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.at-trust-item h4 {
+  font-size: 1rem;
+  color: var(--color-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.at-trust-item p {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  margin-bottom: 0;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 1024px) {
+  .at-about-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .at-trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .at-nav-links {
+    display: none;
+  }
+
+  .at-hero-content {
+    padding: 7rem 1rem 3rem;
+  }
+
+  .at-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .at-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .at-about-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .at-tabs {
+    gap: 0.25rem;
+  }
+
+  .at-tab {
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .at-annadana-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .at-anna-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .at-anna-count {
+    font-size: 1.5rem;
+  }
+
+  .at-anna-amount {
+    font-size: 1.1rem;
+  }
+
+  .at-festival-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .at-sudama-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .at-custom-row {
+    flex-direction: column;
+  }
+
+  .at-trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .at-scripture-banner {
+    padding: 1.5rem;
+  }
+
+  .at-gita-quote {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .at-annadana-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .at-hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .at-hero-actions .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .at-trust-grid {
+    grid-template-columns: 1fr;
+  }
+}

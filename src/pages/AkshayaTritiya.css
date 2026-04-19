@@ -80,33 +80,27 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  background:
-    linear-gradient(135deg, #1a0a00 0%, #3d1f00 30%, #6b3410 60%, #d97917 100%);
+  background: #1a0a00;
   overflow: hidden;
 }
 
-.at-hero::before {
-  content: '';
+.at-hero-bg {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse at 20% 80%, rgba(217, 121, 23, 0.3) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(255, 167, 38, 0.15) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-.at-hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  pointer-events: none;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
 }
 
 .at-hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 10, 0, 0.45) 0%,
+    rgba(26, 10, 0, 0.55) 40%,
+    rgba(26, 10, 0, 0.75) 100%
+  );
 }
 
 .at-hero-content {
@@ -443,20 +437,50 @@
 }
 
 .at-festival-card {
-  background: white;
+  position: relative;
   border-radius: var(--radius-xl);
-  padding: 2rem;
+  overflow: hidden;
   text-align: center;
   box-shadow: var(--shadow-md);
   cursor: pointer;
   transition: all var(--transition-base);
   border: 2px solid transparent;
+  min-height: 320px;
 }
 
 .at-festival-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-xl);
   border-color: var(--color-primary);
+}
+
+.at-festival-card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+.at-festival-card-content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.6);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.at-festival-card:hover .at-festival-card-bg {
+  opacity: 0.85;
+}
+
+.at-festival-card:hover .at-festival-card-content {
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .at-festival-icon {
@@ -466,22 +490,25 @@
 
 .at-festival-name {
   font-size: 1.15rem;
-  color: var(--color-secondary);
+  color: white;
   margin-bottom: 0.5rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
 .at-festival-desc {
   font-size: 0.9rem;
-  color: var(--color-text-light);
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
   margin-bottom: 1rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .at-festival-amount {
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--color-primary);
+  color: var(--color-warning);
   margin-bottom: 1.25rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
 .at-festival-card .btn {

@@ -5,7 +5,19 @@ import DonorForm from '../components/DonorForm';
 import PaymentModal from '../components/PaymentModal';
 import ModernFooter from '../components/ModernFooter';
 import logoImg from '../assets/logo.png';
+import krishnaBalaramImg from '../assets/krishna_balaram.JPG';
+import abhishekaImg from '../assets/special_abhisheka_seva.jpeg';
+import pushpaImg from '../assets/pushpa_seva.JPG';
+import vastraImg from '../assets/vastra_seva.JPG';
+import bhogImg from '../assets/maha_bhog_seva.jpeg';
 import './AkshayaTritiya.css';
+
+const SEVA_IMAGES = {
+  abhisheka: abhishekaImg,
+  pushpa: pushpaImg,
+  vastra: vastraImg,
+  bhog: bhogImg,
+};
 
 const ANNADANA_SEVAS = [
   { id: 'anna-10', devotees: 10, amount: 1500, label: 'Annadana Seva for 10 Devotees' },
@@ -102,6 +114,7 @@ export default function AkshayaTritiya() {
 
       {/* Hero Section */}
       <section className="at-hero">
+        <div className="at-hero-bg" style={{ backgroundImage: `url(${krishnaBalaramImg})` }} />
         <div className="at-hero-overlay" />
         <div className="at-hero-content">
           <div className="container">
@@ -254,11 +267,16 @@ export default function AkshayaTritiya() {
             <div className="at-festival-grid">
               {FESTIVAL_SEVAS.map((seva) => (
                 <div key={seva.id} className="at-festival-card" onClick={() => handleSevaSelect(seva)}>
-                  <div className="at-festival-icon">{seva.icon}</div>
-                  <h3 className="at-festival-name">{seva.label}</h3>
-                  <p className="at-festival-desc">{seva.description}</p>
-                  <div className="at-festival-amount">₹{seva.amount.toLocaleString('en-IN')}</div>
-                  <button className="btn btn-primary btn-small">Offer Seva</button>
+                  {SEVA_IMAGES[seva.id] && (
+                    <div className="at-festival-card-bg" style={{ backgroundImage: `url(${SEVA_IMAGES[seva.id]})` }} />
+                  )}
+                  <div className="at-festival-card-content">
+                    <div className="at-festival-icon">{seva.icon}</div>
+                    <h3 className="at-festival-name">{seva.label}</h3>
+                    <p className="at-festival-desc">{seva.description}</p>
+                    <div className="at-festival-amount">₹{seva.amount.toLocaleString('en-IN')}</div>
+                    <button className="btn btn-primary btn-small">Offer Seva</button>
+                  </div>
                 </div>
               ))}
             </div>

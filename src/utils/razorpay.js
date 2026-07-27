@@ -49,7 +49,7 @@ export async function initiatePayment({
       name: 'ISKCON Mangalore Govardhan Hills',
       description: sevaType,
       order_id: orderId,
-      image: '/src/assets/logo.png',
+      image: '/src/assets/logo.webp',
       prefill: {
         name: donorName,
         email: donorEmail,
@@ -128,7 +128,7 @@ export async function initiateSubscription({
       subscription_id: subscriptionId,
       name: 'ISKCON Mangalore Govardhan Hills',
       description: `${sevaType} — ₹${amount.toLocaleString('en-IN')}/month`,
-      image: '/src/assets/logo.png',
+      image: '/src/assets/logo.webp',
       prefill: {
         name: donorName,
         email: donorEmail,

@@ -1,5 +1,5 @@
 import './ModernFooter.css';
-import logoImg from '../assets/logo.png';
+import logoImg from '../assets/logo.webp';
 
 export default function ModernFooter() {
   return (

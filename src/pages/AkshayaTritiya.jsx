@@ -4,12 +4,16 @@ import { registerDonor, initiatePayment } from '../utils/razorpay';
 import DonorForm from '../components/DonorForm';
 import PaymentModal from '../components/PaymentModal';
 import ModernFooter from '../components/ModernFooter';
+<<<<<<< Updated upstream
 import logoImg from '../assets/logo.png';
 import krishnaBalaramImg from '../assets/krishna_balaram.JPG';
 import abhishekaImg from '../assets/special_abhisheka_seva.jpeg';
 import pushpaImg from '../assets/pushpa_seva.JPG';
 import vastraImg from '../assets/vastra_seva.JPG';
 import bhogImg from '../assets/maha_bhog_seva.jpeg';
+=======
+import logoImg from '../assets/logo.webp';
+>>>>>>> Stashed changes
 import './AkshayaTritiya.css';
 
 const SEVA_IMAGES = {

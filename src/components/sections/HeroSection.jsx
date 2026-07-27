@@ -3,7 +3,7 @@ import './HeroSection.css';
 import templeView1 from '../assets/001_temple_front_view.jpeg';
 import templeView2 from '../assets/right_side_view.png';
 import templeView3 from '../assets/side_view.png';
-import logoImg from '../assets/logo.png';
+import logoImg from '../assets/logo.webp';
 
 export default function HeroSection() {
   const [currentBgIndex, setCurrentBgIndex] = useState(0);

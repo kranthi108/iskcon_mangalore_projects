@@ -97,7 +97,7 @@ export default function AkshayaTritiya() {
         <div className="container">
           <div className="at-nav-content">
             <Link to="/" className="at-nav-brand">
-              <img src={logoImg} alt="ISKCON Logo" className="at-nav-logo" />
+              <img src={logo} alt="Srila Prabhupada's ISKCON Mangalore" className="h-14 w-auto object-contain scale-150 origin-left mr-8" />
               <div>
                 <span className="at-nav-name">ISKCON Mangalore</span>
                 <span className="at-nav-sub">Govardhan Hills</span>

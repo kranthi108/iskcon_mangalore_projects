@@ -93,8 +93,8 @@ export default function DonationCard() {
 
   const handleDonateClick = () => {
     const amount = getFinalAmount();
-    if (amount < 1) {
-      alert('Please select or enter a donation amount.');
+    if (amount < 2100) {
+      alert('Please enter a donation amount greater than ₹2,100 (Brick Seva).');
       return;
     }
     setShowDonorForm(true);
@@ -250,7 +250,7 @@ export default function DonationCard() {
             <div className="custom-amount">
               <input 
                 type="text" 
-                placeholder={isMonthly ? 'Enter monthly amount (₹)' : 'Enter your custom amount (₹)'}
+                placeholder={isMonthly ? 'Enter monthly amount greater than ₹2,100' : 'Enter the custom amount greater than ₹2,100'}
                 className="amount-input"
                 value={customAmount}
                 onChange={handleCustomChange}
